@@ -253,7 +253,7 @@ Check that Peer is running
 
 Create channel (do this only once in Peer 1)
 
-    kubectl exec -n blockchain $PEER_POD -- peer channel create -o ord1-hlf-ord.blockchain.svc.cluster.local:7050 -c mychannel -f /hl_config/channel/mychannel.tx
+    kubectl exec -n blockchain $PEER_POD -- peer channel create -o ord1-hlf-ord.blockchain.svc.cluster.local:7050 -c mychannel -f /hl_config/channel/hlf--channel/mychannel.tx
 
 Fetch and join channel
 
