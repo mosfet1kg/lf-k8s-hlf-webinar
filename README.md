@@ -51,9 +51,9 @@ You can install the certificate manager, to ensure you can auto-generate the TLS
 
 Then we need to add the Staging and Production cluster issuers
 
-    kubectl create -f ./extra/certManagerCI_staging.yaml
+    kubectl -n blockchain create -f ./extra/certManagerCI_staging.yaml
 
-    kubectl create -f ./extra/certManagerCI_production.yaml
+    kubectl -n blockchain create -f ./extra/certManagerCI_production.yaml
 
 ### Customisation
 
