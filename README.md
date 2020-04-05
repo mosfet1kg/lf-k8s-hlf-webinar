@@ -159,6 +159,7 @@ Save them as secrets
 
 Install Kafka chart (use special values to ensure 4 Kafka brokers and that Kafka messages don't disappear)
 
+    helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator  
     helm install incubator/kafka -n kafka-hlf --namespace blockchain -f ./helm_values/kafka-hlf_values.yaml
 
 ### Fabric Orderer
