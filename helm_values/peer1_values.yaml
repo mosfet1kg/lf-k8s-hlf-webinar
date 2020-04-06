@@ -9,12 +9,19 @@ peer:
   databaseType: CouchDB
   couchdbInstance: cdb-peer1
   mspID: AidTechMSP
+  tls:
+    client:
+      enabled: true
 
 secrets:
   peer:
     cert: hlf--peer1-idcert
     key: hlf--peer1-idkey
     caCert: hlf--ca-cert
+    tls: hlf--peer1
+    tlsRootCert: hlf--ca-cert
+    tlsClient: hlf--peer1
+    tlsClientRootCert: hlf--ca-cert
   channels:
     - "hlf--channel"
   adminCert: hlf--org-admincert
