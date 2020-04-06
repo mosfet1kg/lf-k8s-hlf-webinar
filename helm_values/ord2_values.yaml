@@ -6,7 +6,7 @@ persistence:
   size: 1Gi
 
 ord:
-  type: raft
+  type: etcdraft
   ## MSP ID of the Orderer
   mspID: AidTechMSP
 

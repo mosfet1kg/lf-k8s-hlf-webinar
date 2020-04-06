@@ -45,12 +45,13 @@ Organizations:
 Orderer: &OrdererDefaults
 
     # Orderer Type: The orderer implementation to start
-    # Available types are "solo" and "kafka"
-    OrdererType: kafka
+    # Available types are "solo","kafka"  and "etcdraft"
+    OrdererType: etcdraft
 
     Addresses:
         - ord1-hlf-ord.blockchain.svc.cluster.local:7050
         - ord2-hlf-ord.blockchain.svc.cluster.local:7050
+        - ord3-hlf-ord.blockchain.svc.cluster.local:7050
 
     # Batch Timeout: The amount of time to wait before creating a batch
     BatchTimeout: 2s
@@ -76,6 +77,29 @@ Orderer: &OrdererDefaults
         # NOTE: Use Address/IP:port notation
         Brokers:
             - kafka-hlf.blockchain.svc.cluster.local:9092
+
+    # https://github.com/hyperledger/fabric-samples/blob/release-1.4/first-network/configtx.yaml
+    # EtcdRaft defines configuration which must be set when the "etcdraft"
+    # orderertype is chosen.
+    EtcdRaft:
+        # The set of Raft replicas for this network. For the etcd/raft-based
+        # implementation, we expect every replica to also be an OSN. Therefore,
+        # a subset of the host:port items enumerated in this list should be
+        # replicated under the Orderer.Addresses key above.
+        Consenters:
+            - Host: ord1-hlf-ord.blockchain.svc.cluster.local:7050
+              Port: 7050
+              ClientTLSCert: /var/hyperledger/msp/signcerts/cert.pem
+              ServerTLSCert: /var/hyperledger/msp/signcerts/cert.pem
+            - Host: ord2-hlf-ord.blockchain.svc.cluster.local:7050
+              Port: 7050
+              ClientTLSCert: /var/hyperledger/msp/signcerts/cert.pem
+              ServerTLSCert: /var/hyperledger/msp/signcerts/cert.pem
+            - Host: ord3-hlf-ord.blockchain.svc.cluster.local:7050
+              Port: 7050
+              ClientTLSCert: /var/hyperledger/msp/signcerts/cert.pem
+              ServerTLSCert: /var/hyperledger/msp/signcerts/cert.pem
+
 
     # Organizations is the list of orgs which are defined as participants on
     # the orderer side of the network
