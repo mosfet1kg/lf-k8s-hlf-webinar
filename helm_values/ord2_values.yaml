@@ -1,12 +1,12 @@
 image:
-  tag: 1.2.0
+  tag: 1.4.6
 
 persistence:
   accessMode: ReadWriteOnce
   size: 1Gi
 
 ord:
-  type: kafka
+  type: raft
   ## MSP ID of the Orderer
   mspID: AidTechMSP
 
