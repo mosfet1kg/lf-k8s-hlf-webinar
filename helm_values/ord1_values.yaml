@@ -9,12 +9,17 @@ ord:
   type: etcdraft
   ## MSP ID of the Orderer
   mspID: AidTechMSP
+  tls:
+    server:
+      enabled: true
 
 secrets:
   ord:
     cert: hlf--ord1-idcert
     key: hlf--ord1-idkey
     caCert: hlf--ca-cert
+    tlsRootCert: hlf--ca-cert
+    tls: hlf--ord1 
   genesis: hlf--genesis
   adminCert: hlf--org-admincert
   caServerTls: ca--tls
