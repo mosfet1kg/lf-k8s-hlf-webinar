@@ -16,6 +16,8 @@ ingress:
         # TODO: Change this back
         - slb-3936394.ncloudslb.com
 
+mountTLS: true
+
 persistence:
   accessMode: ReadWriteOnce
   size: 1Gi
