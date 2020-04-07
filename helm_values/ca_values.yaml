@@ -26,16 +26,16 @@ postgresql:
   enabled: true
 
 config:
-  hlfToolsVersion: 1.2.0
+  hlfToolsVersion: 1.4.6
   csr:
     names:
-      c: IE
-      st: Dublin
-      l:
-      o: "AID:Tech"
-      ou: Blockchain
+      c: KR
+      st: Gyeonggi-do
+      l: Seongnam-si
+      o: "NAVER Corp"
+      ou: "Blockchain"
   affiliations:
-    aidtech: []
+    gbteam: []
 
 affinity:
   podAntiAffinity:
